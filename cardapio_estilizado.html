@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio Esfiharia Mix</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lato', sans-serif; 
+            background-image: url('https://user-images.githubusercontent.com/97839956/272367500-b6f70915-d910-4137-b248-b4b66914ed07.jpg'); 
+            background-size: cover;
+            background-attachment: fixed; 
+            background-position: center;
+        }
+        h1, h2 {
+            font-family: 'Poppins', sans-serif; 
+        }
+        
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #2b2b2b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e8a21e;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d4931c;
+        }
+
+        
+        .divider {
+            height: 2px;
+            background-color: #e8a21e; 
+            margin: 0.5rem 0; 
+            width: 100%; 
+        }
+
+        
+        #modal-overlay {
+            transition: opacity 0.3s ease;
+        }
+        #modal-box {
+            transition: all 0.3s ease;
+        }
+        
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        .spinner {
+            animation: spin 1s linear infinite;
+            border-color: #e8a21e; 
+            border-top-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+
+    <div class="container mx-auto max-w-2xl bg-gray-800 bg-opacity-95 shadow-xl rounded-lg my-8 overflow-hidden border-2 border-yellow-600">
+        
+        <header class="bg-yellow-600 p-6 text-center shadow-md">
+            <h1 class="text-5xl font-extrabold text-gray-900 tracking-wider">
+                ESFIHARIA MIX
+            </h1>
+            <h2 class="text-3xl font-extrabold text-gray-900 uppercase">Cardápio</h2>
+        </header>
+
+        <main class="p-6 sm:p-8">
+
+            
+            <div class="mb-8 text-center">
+                <button id="chefSuggestionBtn" class="bg-yellow-500 text-gray-900 text-xl font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-yellow-400 transition-all duration-300 transform hover:scale-105">
+                    ✨ Sugestão do Chef ✨
+                </button>
+            </div>
+
+            <section class="mb-8">
+                <div class="bg-yellow-600 p-4 mb-5 rounded-md shadow-inner">
+                    <h2 class="text-3xl font-extrabold text-gray-900 uppercase">ÁGUA MINERAL</h2>
+                </div>
+                <div class="space-y-4">
+                    
+                    <div class="flex justify-between items-center pb-3 border-b border-gray-700">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-100">ÁGUA MINERAL C/GÁS</h3>
+                            <p class="text-sm text-gray-400">ÁGUA C/GÁS</p>
+                        </div>
+                        <span class="text-xl font-extrabold text-yellow-500 whitespace-nowrap ml-4">R$ 4,00</span>
+                    </div>
+
+                    <div class="flex justify-between items-center pb-3 border-b border-gray-700">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-100">ÁGUA MINERAL S/GÁS</h3>
+                            <p class="text-sm text-gray-400">ÁGUA MINERAL</p>
+                        </div>
+                        <span class="text-xl font-extrabold text-yellow-500 whitespace-nowrap ml-4">R$ 4,00</span>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="mb-8">
+                <div class="bg-yellow-600 p-4 mb-5 rounded-md shadow-inner">
+                    <h2 class="text-3xl font-extrabold text-gray-900 uppercase">CERVEJAS</h2>
+                </div>
+                <div class="space-y-4">
+                    
+                    <div class="flex justify-between items-center pb-3 border-b border-gray-700">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-100 flex items-center gap-2">
+                                <span>ESFIHA CALABRESA</span>
+                                <button class="pairing-btn text-lg hover:opacity-75 transition-opacity" data-item-name="Esfiha Calabresa" title="Sugerir Harmonização">✨</button>
+                            </h3>
+                            <p class="text-sm text-gray-400">CALABRESA</p>
+                        </div>
+                        <span class="text-xl font-extrabold text-yellow-500 whitespace-nowrap ml-4">R$ 3,80</span>
+                    </div>
+
+                    <div class="flex justify-between items-center pb-3 border-b border-gray-700">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-100 flex items-center gap-2">
+                                <span>ESFIHA CARNE SECA C/BANANA</span>
+                                <button class="pairing-btn text-lg hover:opacity-75 transition-opacity" data-item-name="Esfiha Carne Seca com Banana" title="Sugerir Harmonização">✨</button>
+                            </h3>
+                            <p class="text-sm text-gray-400">CARNE SECA COM BANANA DA TERRA</p>
+                        </div>
+                        <span class="text-xl font-extrabold text-yellow-500 whitespace-nowrap ml-4">R$ 4,80</span>
+                    </div>
+
+                    <div class="flex justify-between items-center pb-3 border-b border-gray-700">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-100 flex items-center gap-2">
+                                <span>ESFIHA DE QUEIJO</span>
+                                <button class="pairing-btn text-lg hover:opacity-75 transition-opacity" data-item-name="Esfiha de Queijo" title="Sugerir Harmonização">✨</button>
+                            </h3>
+                            <p class="text-sm text-gray-400">QUEIJO C/CATUPIRY</p>
+                        </div>
+                        <span class="text-xl font-extrabold text-yellow-500 whitespace-nowrap ml-4">R$ 3,80</span>
+                    </div>
+
+                    <div class="flex justify-between items-center pb-3 border-b border-gray-700">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-100 flex items-center gap-2">
+                                <span>ESFIHA SABOR CARNE</span>
+                                <button class="pairing-btn text-lg hover:opacity-75 transition-opacity" data-item-name="Esfiha de Carne" title="Sugerir Harmonização">✨</button>
+                            </h3>
+                            <p class="text-sm text-gray-400">CARNE</p>
+                        </div>
+                        <span class="text-xl font-extrabold text-yellow-500 whitespace-nowrap ml-4">R$ 3,80</span>
+                    </div>
+
+                    <div class="flex justify-between items-center pb-3 border-b border-gray-700">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-100 flex items-center gap-2">
+                                <span>ESFIHA SABOR FRANGO C/CATUPIRY</span>
+                                <button class="pairing-btn text-lg hover:opacity-75 transition-opacity" data-item-name="Esfiha de Frango com Catupiry" title="Sugerir Harmonização">✨</button>
+                            </h3>
+                            <p class="text-sm text-gray-400">FRANGO E CATUPIRY</p>
+                        </div>
+                        <span class="text-xl font-extrabold text-yellow-500 whitespace-nowrap ml-4">R$ 3,80</span>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Seção: PIZZAS --><section class="mb-8">
+                <div class="bg-yellow-600 p-4 mb-5 rounded-md shadow-inner">
+                    <h2 class="text-3xl font-extrabold text-gray-900 uppercase">PIZZAS</h2>
+                </div>
+                <div class="space-y-4">
+
+                    <div class="flex justify-between items-start pb-3 border-b border-gray-700">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-100 flex items-center gap-2">
+                                <span>PIZZA CALABRESA</span>
+                                <button class="pairing-btn text-lg hover:opacity-75 transition-opacity" data-item-name="Pizza Calabresa" title="Sugerir Harmonização">✨</button>
+                            </h3>
+                            <p class="text-sm text-gray-400 max-w-md">Molho de tomate fresco, Mussarela, calabresa especial fatiada, rodelas de cebola, orégano e azeitonas pretas</p>
+                        </div>
+                        <span class="text-xl font-extrabold text-yellow-500 whitespace-nowrap ml-4">R$ 40,00</span>
+                    </div>
+                    
+                    <div class="flex justify-between items-start pb-3 border-b border-gray-700">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-100 flex items-center gap-2">
+                                <span>PIZZA CARNE SECA C/BANANA</span>
+                                <button class="pairing-btn text-lg hover:opacity-75 transition-opacity" data-item-name="Pizza Carne Seca com Banana" title="Sugerir Harmonização">✨</button>
+                            </h3>
+                            <p class="text-sm text-gray-400 max-w-md">Molho de tomate fresco, Mussarela, CARNE SECA E BANANA DA TERRA</p>
+                        </div>
+                        <span class="text-xl font-extrabold text-yellow-500 whitespace-nowrap ml-4">R$ 45,00</span>
+                    </div>
+
+                    <div class="flex justify-between items-start pb-3 border-b border-gray-700">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-100 flex items-center gap-2">
+                                <span>PIZZA FRANGO E CATUPIRY</span>
+                                <button class="pairing-btn text-lg hover:opacity-75 transition-opacity" data-item-name="Pizza Frango e Catupiry" title="Sugerir Harmonização">✨</button>
+                            </h3>
+                            <p class="text-sm text-gray-400 max-w-md">Molho de tomate fresco, Mussarela, cobertura de catupiry, frango desfiado, orégano e azeitonas pretas</p>
+                        </div>
+                        <span class="text-xl font-extrabold text-yellow-500 whitespace-nowrap ml-4">R$ 40,00</span>
+                    </div>
+
+                    <div class="flex justify-between items-start pb-3 border-b border-gray-700">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-100 flex items-center gap-2">
+                                <span>PIZZA FRANGO COM BACON</span>
+                                <button class="pairing-btn text-lg hover:opacity-75 transition-opacity" data-item-name="Pizza Frango com Bacon" title="Sugerir Harmonização">✨</button>
+                            </h3>
+                            <p class="text-sm text-gray-400 max-w-md">Molho de tomate fresco, Mussarela, Frango, Bacon, Catupiry, Azeitona e Orégano</p>
+                        </div>
+                        <span class="text-xl font-extrabold text-yellow-500 whitespace-nowrap ml-4">R$ 56,00</span>
+                    </div>
+
+                    <div class="flex justify-between items-start pb-3 border-b border-gray-700">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-100 flex items-center gap-2">
+                                <span>PIZZA LOMBO CANADENSE</span>
+                                <button class="pairing-btn text-lg hover:opacity-75 transition-opacity" data-item-name="Pizza Lombo Canadense" title="Sugerir Harmonização">✨</button>
+                            </h3>
+                            <p class="text-sm text-gray-400 max-w-md">Molho de tomate fresco, Mussarela, Lombo Canadense, Tomate, Catupiry ou Requeijão, Orégano e Azeitonas</t>
+                        </div>
+                        <span class="text-xl font-extrabold text-yellow-500 whitespace-nowrap ml-4">R$ 45,00</span>
+                    </div>
+
+                    <div class="flex justify-between items-start pb-3 border-b border-gray-700">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-100 flex items-center gap-2">
+                                <span>PIZZA MARGUERITA</span>
+                                <button class="pairing-btn text-lg hover:opacity-75 transition-opacity" data-item-name="Pizza Margherita" title="Sugerir Harmonização">✨</button>
+                            </h3>
+                            <p class="text-sm text-gray-400 max-w-md">Molho de tomate fresco, Mussarela, Provolone, Manjericão, Orégano e Azeitonas</p>
+                        </div>
+                        <span class="text-xl font-extrabold text-yellow-500 whitespace-nowrap ml-4">R$ 40,00</span>
+                    </div>
+
+                    <div class="flex justify-between items-start pb-3 border-b border-gray-700">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-100 flex items-center gap-2">
+                                <span>PIZZA PORTUGUESA</span>
+                                <button class="pairing-btn text-lg hover:opacity-75 transition-opacity" data-item-name="Pizza Portuguesa" title="Sugerir Harmonização">✨</button>
+                            </h3>
+                            <p class="text-sm text-gray-400 max-w-md">Molho de tomate fresco, Mussarela, Presunto, Ovo, Calabresa Ralada, Orégano e Azeitona</p>
+                        </div>
+                        <span class="text-xl font-extrabold text-yellow-500 whitespace-nowrap ml-4">R$ 56,00</span>
+                    </div>
+
+                    <div class="flex justify-between items-start pb-3 border-b border-gray-700">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-100 flex items-center gap-2">
+                                <span>PIZZA DE MILHO</span>
+                                <button class="pairing-btn text-lg hover:opacity-75 transition-opacity" data-item-name="Pizza de Milho" title="Sugerir Harmonização">✨</button>
+                            </h3>
+                            <p class="text-sm text-gray-400 max-w-md">Molho de tomate fresco, Mussarela, Milho, Azeitona e Orégano</p>
+                        </div>
+                        <span class="text-xl font-extrabold text-yellow-500 whitespace-nowrap ml-4">R$ 40,00</span>
+                    </div>
+
+                    <div class="flex justify-between items-start pb-3 border-b border-gray-700">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-100 flex items-center gap-2">
+                                <span>PIZZA DE ATUM</span>
+                                <button class="pairing-btn text-lg hover:opacity-75 transition-opacity" data-item-name="Pizza de Atum" title="Sugerir Harmonização">✨</button>
+                            </h3>
+                            <p class="text-sm text-gray-400 max-w-md">Molho de tomate fresco, Mussarela, Atum Ralado, Azeitona e Orégano</p>
+                        </div>
+                        <span class="text-xl font-extrabold text-yellow-500 whitespace-nowrap ml-4">R$ 40,00</span>
+                    </div>
+
+                    <div class="flex justify-between items-start pb-3 border-b border-gray-700">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-100 flex items-center gap-2">
+                                <span>PIZZA DE MUSSARELA</span>
+                                <button class="pairing-btn text-lg hover:opacity-75 transition-opacity" data-item-name="Pizza de Mussarela" title="Sugerir Harmonização">✨</button>
+                            </h3>
+                            <p class="text-sm text-gray-400 max-w-md">Molho de tomate fresco, Mussarela em dobro (400g), Orégano e Azeitona</p>
+                        </div>
+                        <span class="text-xl font-extrabold text-yellow-500 whitespace-nowrap ml-4">R$ 40,00</span>
+                    </div>
+
+                </div>
+
+                <!-- Nota sobre Pizzas --><div class="mt-8 bg-yellow-700 bg-opacity-30 border-l-4 border-yellow-600 p-4 rounded-md text-gray-100">
+                    <h4 class="font-bold text-yellow-500 text-lg">Pizzas Meio a Meio</h4>
+                    <p class="text-sm mt-2">Para pizzas de dois sabores, o preço final será sempre o valor do sabor mais caro que você escolher. As faixas de preço são:</p>
+                    <ul class="list-disc list-inside text-sm mt-2 space-y-1 pl-4">
+                        <li><strong class="text-yellow-400">R$ 56,00:</strong> Se incluir PIZZA FRANGO COM BACON ou PIZZA PORTUGUESA.</li>
+                        <li><strong class="text-yellow-400">R$ 45,00:</strong> Se incluir PIZZA CARNE SECA C/BANANA ou PIZZA LOMBO CANADENSE (e não incluir as de R$56).</li>
+                        <li><strong class="text-yellow-400">R$ 40,00:</strong> Se combinar apenas sabores de R$ 40,00.</li>
+                    </ul>
+                </div>
+
+            </section>
+
+            <section class="mb-8">
+                <div class="bg-yellow-600 p-4 mb-5 rounded-md shadow-inner">
+                    <h2 class="text-3xl font-extrabold text-gray-900 uppercase">PORÇÕES</h2>
+                </div>
+                <div class="space-y-4">
+                    
+                    <div class="flex justify-between items-center pb-3 border-b border-gray-700">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-100 flex items-center gap-2">
+                                <span>BATATA FRITA TRADICIONAL</span>
+                                <button class="pairing-btn text-lg hover:opacity-75 transition-opacity" data-item-name="Batata Frita Tradicional" title="Sugerir Harmonização">✨</button>
+                            </h3>
+                            <p class="text-sm text-gray-400">200g de deliciosas batatinhas crocantes</p>
+                        </div>
+                        <span class="text-xl font-extrabold text-yellow-500 whitespace-nowrap ml-4">R$ 10,00</span>
+                    </div>
+
+                    <div class="flex justify-between items-center pb-3 border-b border-gray-700">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-100 flex items-center gap-2">
+                                <span>BATATA FRITA C/ CATUPIRY E CARNE SECA</span>
+                                <button class="pairing-btn text-lg hover:opacity-75 transition-opacity" data-item-name="Batata Frita com Catupiry e Carne Seca" title="Sugerir Harmonização">✨</button>
+                            </h3>
+                            <p class="text-sm text-gray-400">200g</p>
+                        </div>
+                        <span class="text-xl font-extrabold text-yellow-500 whitespace-nowrap ml-4">R$ 20,00</span>
+                    </div>
+
+                    <div class="flex justify-between items-center pb-3 border-b border-gray-700">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-100 flex items-center gap-2">
+                                <span>MANJA DO SERTÃO</span>
+                                <button class="pairing-btn text-lg hover:opacity-75 transition-opacity" data-item-name="Manja do Sertão" title="Sugerir Harmonização">✨</button>
+                            </h3>
+                            <p class="text-sm text-gray-400 max-w-md">Massa de Aipim Frito, Molho de Queijo e Carne Seca Desfiada por cima</p>
+                        </div>
+                        <span class="text-xl font-extrabold text-yellow-500 whitespace-nowrap ml-4">R$ 20,00</span>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="mb-8">
+                <div class="bg-yellow-600 p-4 mb-5 rounded-md shadow-inner">
+                    <h2 class="text-3xl font-extrabold text-gray-900 uppercase">REFRIGERANTES</h2>
+                </div>
+                <div class="space-y-4">
+                    
+                    <div class="flex justify-between items-center pb-3 border-b border-gray-700">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-100">COCA-COLA 1LITRO</h3>
+                        </div>
+                        <span class="text-xl font-extrabold text-yellow-500 whitespace-nowrap ml-4">R$ 9,00</span>
+                    </div>
+
+                    <div class="flex justify-between items-center pb-3 border-b border-gray-700">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-100">REFRIGERANTE GUARANÁ ANTÁRCTICA 1L</h3>
+                        </div>
+                        <span class="text-xl font-extrabold text-yellow-500 whitespace-nowrap ml-4">R$ 7,00</span>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="mb-8">
+                <div class="bg-yellow-600 p-4 mb-5 rounded-md shadow-inner">
+                    <h2 class="text-3xl font-extrabold text-gray-900 uppercase">SUCOS</h2>
+                </div>
+                <div class="space-y-4">
+                    
+                    <div class="flex justify-between items-center pb-3 border-b border-gray-700">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-100">MANGA 350ML</h3>
+                            <p class="text-sm text-gray-400">Suco natural de Manga (gelado)</p>
+                        </div>
+                        <span class="text-xl font-extrabold text-yellow-500 whitespace-nowrap ml-4">R$ 5,00</span>
+                    </div>
+
+                    <div class="flex justify-between items-center pb-3 border-b border-gray-700">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-100">ACEROLA 350ML</h3>
+                            <p class="text-sm text-gray-400">Suco natural de Acerola (gelado)</p>
+                        </div>
+                        <span class="text-xl font-extrabold text-yellow-500 whitespace-nowrap ml-4">R$ 5,00</span>
+                    </div>
+
+                    <div class="flex justify-between items-center pb-3 border-b border-gray-700">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-100">MARACUJÁ 350ML</h3>
+                            <p class="text-sm text-gray-400">Suco natural de Maracujá (gelado)</p>
+                        </div>
+                        <span class="text-xl font-extrabold text-yellow-500 whitespace-nowrap ml-4">R$ 6,00</span>
+                    </div>
+
+                   
+
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="text-center p-6 sm:p-8 bg-yellow-600 shadow-inner">
+            <p class="text-lg font-semibold text-gray-900">Obrigado pela sua preferência!</p>
+        </footer>
+
+    </div>
+
+    
+    <div id="modal-overlay" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 z-50 hidden opacity-0">
+        <div id="modal-box" class="bg-gray-800 border-2 border-yellow-600 rounded-lg shadow-xl w-full max-w-lg p-6 relative transform scale-95 opacity-0">
+            
+            <button id="closeModalBtn" class="absolute top-4 right-4 text-gray-400 hover:text-white text-3xl">&times;</button>
+            
+            
+            <h3 id="modalTitle" class="text-2xl font-bold text-yellow-500 mb-4"></h3>
+            
+            
+            <div id="modalContentWrapper">
+                
+                <div id="loadingSpinner" class="flex items-center justify-center h-24">
+                    <div class="spinner w-12 h-12 border-4 rounded-full"></div>
+                </div>
+                
+                <p id="modalContent" class="text-gray-200 text-lg leading-relaxed"></p>
+            </div>
+
+            
+            <div class="mt-6 pt-4 border-t border-gray-700 text-center">
+                <p class="text-sm text-gray-500">Feito com ✨ Gemini</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const apiKey = ""; 
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+
+            
+            const modalOverlay = document.getElementById('modal-overlay');
+            const modalBox = document.getElementById('modal-box');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalContent = document.getElementById('modalContent');
+            const loadingSpinner = document.getElementById('loadingSpinner');
+            const closeModalBtn = document.getElementById('closeModalBtn');
+
+            
+            const chefSuggestionBtn = document.getElementById('chefSuggestionBtn');
+            const pairingBtns = document.querySelectorAll('.pairing-btn');
+
+            
+            
+            function showModal(title) {
+                modalTitle.textContent = title;
+                modalContent.textContent = ''; 
+                loadingSpinner.style.display = 'flex'; 
+                modalOverlay.classList.remove('hidden');
+                setTimeout(() => { 
+                    modalOverlay.classList.remove('opacity-0');
+                    modalBox.classList.remove('opacity-0', 'scale-95');
+                }, 10);
+            }
+
+            function hideModal() {
+                modalOverlay.classList.add('opacity-0');
+                modalBox.classList.add('opacity-0', 'scale-95');
+                setTimeout(() => {
+                    modalOverlay.classList.add('hidden');
+                }, 300); 
+            }
+
+            function displayResult(text) {
+                loadingSpinner.style.display = 'none'; 
+                modalContent.textContent = text;
+            }
+
+            function displayError(errorMsg) {
+                loadingSpinner.style.display = 'none';
+                modalContent.textContent = errorMsg;
+            }
+
+            
+            closeModalBtn.addEventListener('click', hideModal);
+            modalOverlay.addEventListener('click', (e) => {
+                if (e.target === modalOverlay) {
+                    hideModal();
+                }
+            });
+
+            
+
+            
+            async function fetchWithBackoff(url, options, retries = 3, delay = 1000) {
+                try {
+                    const response = await fetch(url, options);
+                    if (!response.ok) {
+                        if (response.status === 429 && retries > 0) {
+                            
+                            await new Promise(resolve => setTimeout(resolve, delay));
+                            return fetchWithBackoff(url, options, retries - 1, delay * 2);
+                        }
+                        throw new Error(`Erro na API: ${response.statusText}`);
+                    }
+                    return response.json();
+                } catch (error) {
+                    if (retries > 0) {
+                        
+                        await new Promise(resolve => setTimeout(resolve, delay));
+                        return fetchWithBackoff(url, options, retries - 1, delay * 2);
+                    }
+                    throw error; 
+                }
+            }
+
+            
+            async function callGemini(userQuery, systemPrompt) {
+                const payload = {
+                    contents: [{ parts: [{ text: userQuery }] }],
+                    systemInstruction: {
+                        parts: [{ text: systemPrompt }]
+                    },
+                };
+
+                try {
+                    const result = await fetchWithBackoff(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    const text = result.candidates?.[0]?.content?.parts?.[0]?.text;
+                    if (text) {
+                        displayResult(text);
+                    } else {
+                        displayError('Não foi possível obter uma resposta. Tente novamente.');
+                    }
+                } catch (error) {
+                    console.error("Erro ao chamar API Gemini:", error);
+                    displayError('Ocorreu um erro ao buscar a sugestão. Por favor, tente mais tarde.');
+                }
+            }
+
+            
+            
+            if (chefSuggestionBtn) {
+                chefSuggestionBtn.addEventListener('click', () => {
+                    showModal('Sugestão do Chef ✨');
+                    
+                    const systemPrompt = "Você é um chef carismático e divertido do restaurante Esfiharia Mix. Sua missão é gerar uma 'Sugestão do Chef' criativa e muito apetitosa para hoje, baseada no cardápio. Seja breve (2-3 frases), use emojis e seja muito convidativo.";
+                    
+                    
+                    const userQuery = `Nosso cardápio de hoje tem: ÁGUA, CERVEJAS (Heineken, Skol, Coronita), DRINKS (Caipirinha, Abacaxi Cremoso, Morango Cremoso), ESFIHAS (Calabresa, Carne Seca c/ Banana, Queijo, Carne, Frango c/ Catupiry), PIZZAS (vários sabores deliciosos), PORÇÕES (Batata Frita, Manja do Sertão), REFRIGERANTES e SUCOS. Baseado neste cardápio, crie uma sugestão do dia especial e muito apetitosa!`;
+
+                    callGemini(userQuery, systemPrompt);
+                });
+            }
+
+            
+            pairingBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const itemName = e.currentTarget.dataset.itemName;
+                    if (!itemName) return;
+
+                    showModal(`Harmonização para ${itemName} ✨`);
+
+                    const systemPrompt = "Você é um sommelier e especialista em harmonização do restaurante Esfiharia Mix. Sua resposta deve ser curta (1-2 frases), amigável e focar em sugerir uma bebida específica do nosso cardápio que harmonize perfeitamente com o prato do cliente.";
+                    
+                    const userPrompt = `Qual bebida do nosso cardápio (Cervejas, Refrigerantes, Sucos, Drinks) harmoniza melhor com "${itemName}"?`;
+
+                    callGemini(userPrompt, systemPrompt);
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
+
+
