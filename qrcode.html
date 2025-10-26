@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code - Cardápio</title>
+    <!-- Carrega o Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Carrega a biblioteca para gerar QR Code -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <style>
+        /* Estilização para o contêiner do QR code garantir que o SVG/canvas preencha */
+        #qrcode-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px; /* Adiciona um preenchimento interno branco */
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        #qrcode-container img,
+        #qrcode-container canvas {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 flex items-center justify-center min-h-screen p-6 font-sans">
+
+    <main class="bg-gray-800 p-8 sm:p-12 rounded-2xl shadow-xl max-w-md w-full text-center border-2 border-yellow-600">
+        
+        <!-- Título -->
+        <h1 class="text-3xl sm:text-4xl font-bold text-yellow-500 mb-6">
+            Aponte sua Câmera
+        </h1>
+
+        <!-- Contêiner onde o QR Code será gerado -->
+        <div id="qrcode-wrapper" class="flex justify-center mb-8">
+            <div id="qrcode-container">
+                <!-- O QR Code será inserido aqui pelo JavaScript -->
+            </div>
+        </div>
+
+        <!-- O link de destino -->
+        <p class="text-gray-300 text-sm break-words">
+            Ou acesse:
+            <a href="https://cardapioesihariamix.netlify.app/" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="text-yellow-400 hover:text-yellow-300 transition-colors duration-300">
+                cardapioesihariamix.netlify.app
+            </a>
+        </p>
+        
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // O link que você quer no QR Code
+            const urlParaConverter = "https://cardapioesihariamix.netlify.app/";
+
+            // O elemento onde o QR Code será renderizado
+            const qrContainer = document.getElementById('qrcode-container');
+
+            // Configurações do QR Code
+            const options = {
+                text: urlParaConverter,
+                width: 280,  // Tamanho em pixels (largura)
+                height: 280, // Tamanho em pixels (altura)
+                colorDark: "#000000", // Cor dos pontos do QR Code
+                colorLight: "#ffffff", // Cor do fundo
+                correctLevel: QRCode.CorrectLevel.H // Nível de correção de erro (H = High)
+            };
+
+            // Tenta limpar o contêiner antes de gerar (caso haja algo)
+            qrContainer.innerHTML = '';
+
+            // Cria o QR Code
+            try {
+                new QRCode(qrContainer, options);
+            } catch (err) {
+                console.error("Erro ao gerar o QR Code:", err);
+                qrContainer.textContent = "Erro ao gerar o QR Code. Verifique o console.";
+            }
+        });
+    </script>
+</html>
+
