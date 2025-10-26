@@ -4,23 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cardápio Esfiharia Mix</title>
-    <!-- Carrega o Tailwind CSS para estilização --><script src="https://cdn.tailwindcss.com"></script>
-    <!-- Carrega a fonte Poppins e Lato para uma estética robusta e legível --><link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
     <style>
-        /* Define as fontes Poppins e Lato como padrão */
         body {
-            font-family: 'Lato', sans-serif; /* Fonte padrão para descrições e itens */
-            background-image: url('https://user-images.githubusercontent.com/97839956/272367500-b6f70915-d910-4137-b248-b4b66914ed07.jpg'); /* Fundo de madeira */
+            font-family: 'Lato', sans-serif; 
+            background-image: url('https://user-images.githubusercontent.com/97839956/272367500-b6f70915-d910-4137-b248-b4b66914ed07.jpg'); 
             background-size: cover;
-            background-attachment: fixed; /* Mantém o fundo fixo ao rolar */
+            background-attachment: fixed; 
             background-position: center;
         }
         h1, h2 {
-            font-family: 'Poppins', sans-serif; /* Fonte mais robusta para títulos */
+            font-family: 'Poppins', sans-serif; 
         }
-        /* Ajuste para o scrollbar */
+        
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -35,22 +34,22 @@
             background: #d4931c;
         }
 
-        /* Estilo para a linha divisória */
+        
         .divider {
             height: 2px;
-            background-color: #e8a21e; /* Amarelo/laranja */
-            margin: 0.5rem 0; /* Espaçamento vertical */
-            width: 100%; /* Largura total */
+            background-color: #e8a21e; 
+            margin: 0.5rem 0; 
+            width: 100%; 
         }
 
-        /* Estilos do Modal */
+        
         #modal-overlay {
             transition: opacity 0.3s ease;
         }
         #modal-box {
             transition: all 0.3s ease;
         }
-        /* Animação de rotação para o spinner */
+        
         @keyframes spin {
             from {
                 transform: rotate(0deg);
@@ -61,38 +60,38 @@
         }
         .spinner {
             animation: spin 1s linear infinite;
-            border-color: #e8a21e; /* Cor amarela */
+            border-color: #e8a21e; 
             border-top-color: transparent;
         }
     </style>
 </head>
 <body class="bg-gray-900 text-gray-100">
 
-    <!-- Container Principal do Cardápio --><div class="container mx-auto max-w-2xl bg-gray-800 bg-opacity-95 shadow-xl rounded-lg my-8 overflow-hidden border-2 border-yellow-600">
+    <div class="container mx-auto max-w-2xl bg-gray-800 bg-opacity-95 shadow-xl rounded-lg my-8 overflow-hidden border-2 border-yellow-600">
         
-        <!-- Cabeçalho do Cardápio --><header class="bg-yellow-600 p-6 text-center shadow-md">
+        <header class="bg-yellow-600 p-6 text-center shadow-md">
             <h1 class="text-5xl font-extrabold text-gray-900 tracking-wider">
                 ESFIHARIA MIX
             </h1>
             <h2 class="text-3xl font-extrabold text-gray-900 uppercase">Cardápio</h2>
         </header>
 
-        <!-- Conteúdo do Menu --><main class="p-6 sm:p-8">
+        <main class="p-6 sm:p-8">
 
-            <!-- Botão de Sugestão do Chef -->
+            
             <div class="mb-8 text-center">
                 <button id="chefSuggestionBtn" class="bg-yellow-500 text-gray-900 text-xl font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-yellow-400 transition-all duration-300 transform hover:scale-105">
                     ✨ Sugestão do Chef ✨
                 </button>
             </div>
 
-            <!-- Seção: ÁGUA MINERAL --><section class="mb-8">
+            <section class="mb-8">
                 <div class="bg-yellow-600 p-4 mb-5 rounded-md shadow-inner">
                     <h2 class="text-3xl font-extrabold text-gray-900 uppercase">ÁGUA MINERAL</h2>
                 </div>
                 <div class="space-y-4">
                     
-                    <!-- Item --><div class="flex justify-between items-center pb-3 border-b border-gray-700">
+                    <div class="flex justify-between items-center pb-3 border-b border-gray-700">
                         <div>
                             <h3 class="text-xl font-bold text-gray-100">ÁGUA MINERAL C/GÁS</h3>
                             <p class="text-sm text-gray-400">ÁGUA C/GÁS</p>
@@ -100,7 +99,7 @@
                         <span class="text-xl font-extrabold text-yellow-500 whitespace-nowrap ml-4">R$ 4,00</span>
                     </div>
 
-                    <!-- Item --><div class="flex justify-between items-center pb-3 border-b border-gray-700">
+                    <div class="flex justify-between items-center pb-3 border-b border-gray-700">
                         <div>
                             <h3 class="text-xl font-bold text-gray-100">ÁGUA MINERAL S/GÁS</h3>
                             <p class="text-sm text-gray-400">ÁGUA MINERAL</p>
@@ -111,7 +110,7 @@
                 </div>
             </section>
 
-            <!-- Seção: CERVEJAS --><section class="mb-8">
+            <section class="mb-8">
                 <div class="bg-yellow-600 p-4 mb-5 rounded-md shadow-inner">
                     <h2 class="text-3xl font-extrabold text-gray-900 uppercase">CERVEJAS</h2>
                 </div>
@@ -305,7 +304,7 @@
 
             </section>
 
-            <!-- Seção: PORÇÕES --><section class="mb-8">
+            <section class="mb-8">
                 <div class="bg-yellow-600 p-4 mb-5 rounded-md shadow-inner">
                     <h2 class="text-3xl font-extrabold text-gray-900 uppercase">PORÇÕES</h2>
                 </div>
@@ -347,7 +346,7 @@
                 </div>
             </section>
 
-            <!-- Seção: REFRIGERANTES --><section class="mb-8">
+            <section class="mb-8">
                 <div class="bg-yellow-600 p-4 mb-5 rounded-md shadow-inner">
                     <h2 class="text-3xl font-extrabold text-gray-900 uppercase">REFRIGERANTES</h2>
                 </div>
@@ -370,7 +369,7 @@
                 </div>
             </section>
 
-            <!-- Seção: SUCOS --><section class="mb-8">
+            <section class="mb-8">
                 <div class="bg-yellow-600 p-4 mb-5 rounded-md shadow-inner">
                     <h2 class="text-3xl font-extrabold text-gray-900 uppercase">SUCOS</h2>
                 </div>
@@ -407,32 +406,32 @@
 
         </main>
 
-        <!-- Rodapé --><footer class="text-center p-6 sm:p-8 bg-yellow-600 shadow-inner">
+        <footer class="text-center p-6 sm:p-8 bg-yellow-600 shadow-inner">
             <p class="text-lg font-semibold text-gray-900">Obrigado pela sua preferência!</p>
         </footer>
 
     </div>
 
-    <!-- Modal para exibir a resposta do Gemini -->
+    
     <div id="modal-overlay" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 z-50 hidden opacity-0">
         <div id="modal-box" class="bg-gray-800 border-2 border-yellow-600 rounded-lg shadow-xl w-full max-w-lg p-6 relative transform scale-95 opacity-0">
-            <!-- Botão de Fechar -->
+            
             <button id="closeModalBtn" class="absolute top-4 right-4 text-gray-400 hover:text-white text-3xl">&times;</button>
             
-            <!-- Título do Modal -->
+            
             <h3 id="modalTitle" class="text-2xl font-bold text-yellow-500 mb-4"></h3>
             
-            <!-- Conteúdo do Modal -->
+            
             <div id="modalContentWrapper">
-                <!-- Spinner de Carregamento -->
+                
                 <div id="loadingSpinner" class="flex items-center justify-center h-24">
                     <div class="spinner w-12 h-12 border-4 rounded-full"></div>
                 </div>
-                <!-- Texto da Resposta -->
+                
                 <p id="modalContent" class="text-gray-200 text-lg leading-relaxed"></p>
             </div>
 
-            <!-- Rodapé do Modal -->
+            
             <div class="mt-6 pt-4 border-t border-gray-700 text-center">
                 <p class="text-sm text-gray-500">Feito com ✨ Gemini</p>
             </div>
@@ -441,10 +440,10 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const apiKey = ""; // Deixe em branco, será tratado pelo ambiente
+            const apiKey = ""; 
             const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
 
-            // Elementos do Modal
+            
             const modalOverlay = document.getElementById('modal-overlay');
             const modalBox = document.getElementById('modal-box');
             const modalTitle = document.getElementById('modalTitle');
@@ -452,18 +451,18 @@
             const loadingSpinner = document.getElementById('loadingSpinner');
             const closeModalBtn = document.getElementById('closeModalBtn');
 
-            // Botões de Ação
+            
             const chefSuggestionBtn = document.getElementById('chefSuggestionBtn');
             const pairingBtns = document.querySelectorAll('.pairing-btn');
 
-            // --- Funções do Modal ---
+            
             
             function showModal(title) {
                 modalTitle.textContent = title;
-                modalContent.textContent = ''; // Limpa conteúdo anterior
-                loadingSpinner.style.display = 'flex'; // Mostra spinner
+                modalContent.textContent = ''; 
+                loadingSpinner.style.display = 'flex'; 
                 modalOverlay.classList.remove('hidden');
-                setTimeout(() => { // Adiciona transição
+                setTimeout(() => { 
                     modalOverlay.classList.remove('opacity-0');
                     modalBox.classList.remove('opacity-0', 'scale-95');
                 }, 10);
@@ -474,11 +473,11 @@
                 modalBox.classList.add('opacity-0', 'scale-95');
                 setTimeout(() => {
                     modalOverlay.classList.add('hidden');
-                }, 300); // Tempo da transição
+                }, 300); 
             }
 
             function displayResult(text) {
-                loadingSpinner.style.display = 'none'; // Esconde spinner
+                loadingSpinner.style.display = 'none'; 
                 modalContent.textContent = text;
             }
 
@@ -487,7 +486,7 @@
                 modalContent.textContent = errorMsg;
             }
 
-            // Event listener para fechar o modal
+            
             closeModalBtn.addEventListener('click', hideModal);
             modalOverlay.addEventListener('click', (e) => {
                 if (e.target === modalOverlay) {
@@ -495,17 +494,15 @@
                 }
             });
 
-            // --- Lógica da API Gemini ---
+            
 
-            /**
-             * Tenta uma requisição fetch com exponential backoff.
-             */
+            
             async function fetchWithBackoff(url, options, retries = 3, delay = 1000) {
                 try {
                     const response = await fetch(url, options);
                     if (!response.ok) {
                         if (response.status === 429 && retries > 0) {
-                            // Throttled, espera e tenta novamente
+                            
                             await new Promise(resolve => setTimeout(resolve, delay));
                             return fetchWithBackoff(url, options, retries - 1, delay * 2);
                         }
@@ -514,17 +511,15 @@
                     return response.json();
                 } catch (error) {
                     if (retries > 0) {
-                        // Erro de rede, espera e tenta novamente
+                        
                         await new Promise(resolve => setTimeout(resolve, delay));
                         return fetchWithBackoff(url, options, retries - 1, delay * 2);
                     }
-                    throw error; // Desiste após tentativas
+                    throw error; 
                 }
             }
 
-            /**
-             * Chama a API Gemini com um prompt e instrução de sistema.
-             */
+            
             async function callGemini(userQuery, systemPrompt) {
                 const payload = {
                     contents: [{ parts: [{ text: userQuery }] }],
@@ -552,23 +547,22 @@
                 }
             }
 
-            // --- Event Listeners dos Botões ---
-
-            // Botão "Sugestão do Chef"
+            
+            
             if (chefSuggestionBtn) {
                 chefSuggestionBtn.addEventListener('click', () => {
                     showModal('Sugestão do Chef ✨');
                     
                     const systemPrompt = "Você é um chef carismático e divertido do restaurante Esfiharia Mix. Sua missão é gerar uma 'Sugestão do Chef' criativa e muito apetitosa para hoje, baseada no cardápio. Seja breve (2-3 frases), use emojis e seja muito convidativo.";
                     
-                    // Enviar o cardápio no prompt do usuário ajuda a IA a dar sugestões relevantes
-                    const userPrompt = `Nosso cardápio de hoje tem: ÁGUA, CERVEJAS (Heineken, Skol, Coronita), DRINKS (Caipirinha, Abacaxi Cremoso, Morango Cremoso), ESFIHAS (Calabresa, Carne Seca c/ Banana, Queijo, Carne, Frango c/ Catupiry), PIZZAS (vários sabores deliciosos), PORÇÕES (Batata Frita, Manja do Sertão), REFRIGERANTES e SUCOS. Baseado neste cardápio, crie uma sugestão do dia especial e muito apetitosa!`;
+                    
+                    const userQuery = `Nosso cardápio de hoje tem: ÁGUA, CERVEJAS (Heineken, Skol, Coronita), DRINKS (Caipirinha, Abacaxi Cremoso, Morango Cremoso), ESFIHAS (Calabresa, Carne Seca c/ Banana, Queijo, Carne, Frango c/ Catupiry), PIZZAS (vários sabores deliciosos), PORÇÕES (Batata Frita, Manja do Sertão), REFRIGERANTES e SUCOS. Baseado neste cardápio, crie uma sugestão do dia especial e muito apetitosa!`;
 
-                    callGemini(userPrompt, systemPrompt);
+                    callGemini(userQuery, systemPrompt);
                 });
             }
 
-            // Botões de "Harmonização"
+            
             pairingBtns.forEach(btn => {
                 btn.addEventListener('click', (e) => {
                     const itemName = e.currentTarget.dataset.itemName;
@@ -588,4 +582,5 @@
 
 </body>
 </html>
+
 
